@@ -63,7 +63,7 @@ def render_content():
             )
         ),
         Button("Submit", type="submit"),
-        role=""), 
+        role="group"), 
 ),
         Hr(),
         render_messages()
