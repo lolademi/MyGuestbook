@@ -46,7 +46,6 @@ def render_content():
         Form(
             Fieldset(
                 Label(
-            "Name",
             Input(
                 name="name",
                 placeholder="Name",
@@ -54,7 +53,6 @@ def render_content():
             )
         ),
         Label(
-            "Message",
             Input(
                 type="text",
                 name="message",
