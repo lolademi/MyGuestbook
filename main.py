@@ -66,9 +66,11 @@ def render_message(entry):
             Footer(Small(Em(f"Posted: {entry['created_at']}"))),
         ),
     )
-    
+# globalcss = Link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css")
 app, rt = fast_app(
-    hdrs=(Link(rel="icon", type="assets/x-icon", href="/assets/favicon.png"),),
+    hdrs=(Link(rel="icon", type="assets/x-icon", href="/assets/favicon.png"),
+        #   (Script(code='',src='https://cdn.tailwindcss.com'), globalcss)
+          ),
     )
     
 def render_message_list():
@@ -130,7 +132,9 @@ def render_content():
                 required=True,
                 maxlength=MAX_MESSAGE_CHAR,
             ),
-            Button("Submit", type="submit"),
+            Button("Submit", type="submit", cls=
+                   "bg-blue-700 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            ),
             role="group",
         ),
         method="post",
@@ -145,7 +149,7 @@ def render_content():
         form,
         Div(
             "Made with ❤️ by ",
-            A("Lolade", href="https://youtube.com/@codingisfun", target="_blank"),
+            A("Lolade", href="https://X.com/read1she2", target="_blank"),
         ),
         Hr(),
         render_message_list(),
