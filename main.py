@@ -101,7 +101,7 @@ def render_content():
         form,
         Div(
             "Made with ❤️ by ",
-            A("Lolade", href="https://X.com/read1she2", target="_blank"),
+            A("Lolade", href="https://x.com/read1she2", target="_blank"),
         ),
         Hr(),
         render_message_list(),
@@ -122,5 +122,5 @@ def post(name: str, message: str):
 if __name__ == "__main__":
     serve()
     
-    
+
 ### end of file: main.py
