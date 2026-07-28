@@ -31,7 +31,6 @@ def add_message(name, message):
 
 
 def get_messages():
-    # Sort by 'id' in descending order to get the latest entries first
     response = (
         supabase.table("MyGuestBook")
         .select("*")
@@ -49,9 +48,13 @@ def render_message(entry):
     )
 
 
+# FastHTML initialization
 app, rt = fast_app(
     hdrs=(Link(rel="icon", type="image/x-icon", href="/assets/favicon.png"),)
 )
+
+# Expose raw ASGI application for Vercel
+app = app.app if hasattr(app, "app") else app
 
 
 def render_message_list():
@@ -116,4 +119,5 @@ def post(name: str, message: str):
     return render_message_list()
 
 
-serve()
+if __name__ == "__main__":
+    serve()
